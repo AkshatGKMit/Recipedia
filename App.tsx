@@ -1,20 +1,29 @@
-import { StatusBar, Text } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { AppName } from '@constants';
-import { Colors, globalStyles } from '@themes';
+import { Colors } from '@themes';
 import GradientScreen from '@components/gradientScreen';
+import { useEffect, useState } from 'react';
+import Splash from '@screens/splash/Splash';
+import Dashboard from '@screens/dashboard/Dashboard';
 
 const App = () => {
+  const [isSplash, setSplash] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSplash(false);
+    }, 2000);
+  }, []);
+
   return (
     <SafeAreaProvider>
       <StatusBar
         translucent
+        animated
         backgroundColor={Colors.transparent}
       />
-      <GradientScreen>
-        <Text>{AppName}</Text>
-      </GradientScreen>
+      <GradientScreen>{isSplash ? <Splash /> : <Dashboard />}</GradientScreen>
     </SafeAreaProvider>
   );
 };
