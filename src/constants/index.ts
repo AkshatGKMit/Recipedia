@@ -4,8 +4,6 @@ import { displayName } from '../../app.json';
 
 export const isIos = Platform.OS === 'ios';
 
-export const AppName = displayName;
-
 export const Orientation = {
   portrait: 'portrait',
   landscape: 'landscape',
@@ -31,3 +29,17 @@ export const IconFamily = {
   simpleLineIcons: 'SimpleLineIcons',
 } as const;
 
+export const AppConstants = {
+  appName: displayName,
+  splashScreenDuration: 3000,
+};
+
+export const Routes = {
+  BottomTabs: {
+    Dashboard: 'Dashboard',
+    MealPlanner: 'MealPlanner',
+    Favorites: 'Favorites',
+  },
+} as const;
+
+export * from './images';

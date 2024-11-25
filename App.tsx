@@ -1,19 +1,22 @@
+import { useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Colors } from '@themes';
 import GradientScreen from '@components/gradientScreen';
-import { useEffect, useState } from 'react';
 import Splash from '@screens/splash/Splash';
 import Dashboard from '@screens/dashboard/Dashboard';
+import { AppConstants } from '@constants';
+import { Colors } from '@themes';
 
 const App = () => {
   const [isSplash, setSplash] = useState(true);
 
+  const { splashScreenDuration } = AppConstants;
+
   useEffect(() => {
     setTimeout(() => {
       setSplash(false);
-    }, 2000);
+    }, splashScreenDuration);
   }, []);
 
   return (
