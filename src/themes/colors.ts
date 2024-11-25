@@ -1,0 +1,31 @@
+export const Colors = {
+  transparent: '#00000000',
+  white: '#ffffff',
+  black: '#000000',
+  grey: '#9E9E9E',
+  primary: {
+    color: '#FB8C00',
+    onPrimary: '#FFFFFF',
+    primaryContainer: '#FFCC80',
+    onPrimaryContainer: '#EF6C00',
+  },
+  secondary: {
+    color: '#5D5E72',
+    onSecondary: '#FFFFFF',
+    secondaryContainer: '#E2E0F9',
+    onSecondaryContainer: '#444559',
+  },
+  error: '#C00020',
+  greyShades: {
+    shade50: '#FAFAFA',
+    shade100: '#F5F5F5',
+    shade200: '#EEEEEE',
+    shade300: '#E0E0E0',
+    shade400: '#BDBDBD',
+    shade500: '#757575',
+    shade600: '#616161',
+    shade700: '#424242',
+    shade800: '#303030',
+    shade900: '#212121',
+  },
+};
