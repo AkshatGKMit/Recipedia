@@ -7,6 +7,8 @@ import Splash from '@screens/splash/Splash';
 import Dashboard from '@screens/dashboard/Dashboard';
 import { AppConstants } from '@constants';
 import { Colors } from '@themes';
+import { NavigationContainer } from '@react-navigation/native';
+import Navigator from '@navigation/Navigator';
 
 const App = () => {
   const [isSplash, setSplash] = useState(true);
@@ -26,7 +28,7 @@ const App = () => {
         animated
         backgroundColor={Colors.transparent}
       />
-      <GradientScreen>{isSplash ? <Splash /> : <Dashboard />}</GradientScreen>
+      <NavigationContainer>{isSplash ? <Splash /> : <Navigator />}</NavigationContainer>
     </SafeAreaProvider>
   );
 };
