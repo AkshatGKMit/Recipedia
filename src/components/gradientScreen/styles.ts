@@ -7,7 +7,7 @@ const Styles = () => {
 
   return StyleSheet.create({
     statusBarGap: {
-      marginTop: isIos ? 0 : topInsets,
+      marginTop: isIos ? 0 : topInsets / 2,
     },
   });
 };
