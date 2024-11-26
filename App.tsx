@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
 
-import GradientScreen from '@components/gradientScreen';
 import Splash from '@screens/splash/Splash';
-import Dashboard from '@screens/dashboard/Dashboard';
+import Navigator from '@navigation/Navigator';
 import { AppConstants } from '@constants';
 import { Colors } from '@themes';
 
@@ -26,7 +26,7 @@ const App = () => {
         animated
         backgroundColor={Colors.transparent}
       />
-      <GradientScreen>{isSplash ? <Splash /> : <Dashboard />}</GradientScreen>
+      <NavigationContainer>{isSplash ? <Splash /> : <Navigator />}</NavigationContainer>
     </SafeAreaProvider>
   );
 };
