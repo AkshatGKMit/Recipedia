@@ -12,6 +12,7 @@ const AppColors = {
   primary: Colors.primary.color,
   primaryText: Colors.primary.color,
   primaryBackground: Colors.white,
+  secondary: Colors.greyShades.shade200,
   secondaryBackground: Colors.greyShades.shade200,
   screenGradient: [Colors.greyShades.shade100, colorWithOpacity(Colors.greyShades.shade200, 0.3)],
   statusBar: Colors.primary.color,

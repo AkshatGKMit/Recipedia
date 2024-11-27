@@ -18,4 +18,19 @@ declare global {
     underlayColor?: string;
     onPress?: () => void;
   }
+
+  interface RefOptions {
+    onShow?: () => void;
+    onHide?: () => void;
+  }
+
+  interface RefManagerParams extends RefOptions {
+    child: React.JSX.Element | null;
+  }
+
+  interface DialogParams extends RefManagerParams {
+    isDismissible?: boolean;
+    backdropColor?: string;
+    borderRadius?: number;
+  }
 }

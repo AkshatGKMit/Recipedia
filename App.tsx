@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 
+import Dialog from '@components/dialog';
 import Splash from '@screens/splash/Splash';
 import Navigator from '@navigation/Navigator';
 import { AppConstants } from '@constants';
@@ -27,6 +28,8 @@ const App = () => {
         backgroundColor={Colors.transparent}
       />
       <NavigationContainer>{isSplash ? <Splash /> : <Navigator />}</NavigationContainer>
+
+      <Dialog />
     </SafeAreaProvider>
   );
 };
