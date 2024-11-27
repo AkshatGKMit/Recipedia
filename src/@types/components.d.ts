@@ -28,10 +28,10 @@ declare global {
   }
 
   type FoodTag = (typeof FoodTags)[keyof typeof FoodTags];
-  type FoodTags = keyof typeof FoodTags;
+  type FoodTags = FoodTag[];
 
   interface FoodTagsProps {
-    name: FoodTags;
+    name: FoodTag;
     onPress?: (tag: FoodTag) => void;
     onLongPress?: (tag: FoodTag) => void;
     selected?: boolean;
@@ -39,7 +39,40 @@ declare global {
   }
 
   interface FoodClassificationProps {
-    name: FoodTags;
+    name: FoodTag;
+  }
+
+  interface FoodFactsProps {
+    didYouKnow?: FoodFacts;
+    joke?: FoodFacts;
+  }
+
+  interface RecipeListTags {
+    tags: FoodTags;
+    includedTags?: FoodTags;
+    excludedTags?: FoodTags;
+    onPressTag?: (tag: FoodTag) => void;
+    onLongPressTag?: (tag: FoodTag) => void;
+  }
+
+  interface EmptyRecipeList {
+    numColumns: number;
+  }
+
+  interface RenderRecipeList {
+    recipes: Recipes;
+    scrollEnabled: boolean;
+  }
+
+  interface RecipeList {
+    recipes: Recipe[];
+    scrollEnabled?: boolean;
+    hideTitle?: boolean;
+    includedTags?: FoodTags;
+    excludedTags?: FoodTags;
+    onPressTag?: (tag: FoodTag) => void;
+    onLongPressTag?: (tag: FoodTag) => void;
+  }
   }
 
   interface RefOptions {
