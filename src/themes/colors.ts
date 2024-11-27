@@ -15,7 +15,10 @@ export const Colors = {
     secondaryContainer: '#E2E0F9',
     onSecondaryContainer: '#444559',
   },
-  error: '#C00020',
+  lightYellow: '#FFCC80',
+  lightGreen: '#A5D6A7',
+  error: '#EF9A9A',
+  red: '#ff0000',
   greyShades: {
     shade50: '#FAFAFA',
     shade100: '#F5F5F5',

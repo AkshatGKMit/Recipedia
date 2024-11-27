@@ -17,9 +17,8 @@ const Styles = () => {
       backgroundColor: AppColors.primaryBackground,
     },
     tabButton: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
+      alignSelf: 'center',
+      padding: 5,
       borderRadius: 30,
     },
   });

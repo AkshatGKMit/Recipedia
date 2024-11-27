@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { View, Animated, Easing } from 'react-native';
+import { View, Animated, Easing, Pressable } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
-import IconButton from '@components/iconButton';
+import Icon from '@components/icon';
 import { IconFamily } from '@constants';
-import { AppColors, Colors } from '@themes';
+import { AppColors, Colors, globalStyles } from '@themes';
 import { Animation } from '@utility/animation';
 import { colorWithOpacity } from '@utility/helpers';
 
@@ -35,6 +35,7 @@ const TabButton = ({ icon, onPress, isActive }: BottomTabButtonProps) => {
   const tabButtonStyles = useMemo(
     () => [
       styles.tabButton,
+      globalStyles.rowCenter,
       {
         backgroundColor: backgroundColorInterpolate,
         transform: [{ scale }],
@@ -44,15 +45,18 @@ const TabButton = ({ icon, onPress, isActive }: BottomTabButtonProps) => {
   );
 
   return (
-    <Animated.View style={tabButtonStyles}>
-      <IconButton
-        family={IconFamily.materialIcons}
-        name={icon}
-        onPress={onPress}
-        iconStyle={{ color: isActive ? AppColors.primary : AppColors.defaultIcon }}
-        underlayColor={Colors.transparent}
-      />
-    </Animated.View>
+    <Pressable
+      onPress={onPress}
+      style={globalStyles.flex1}
+    >
+      <Animated.View style={tabButtonStyles}>
+        <Icon
+          family={IconFamily.materialIcons}
+          name={icon}
+          style={{ color: isActive ? AppColors.primary : AppColors.defaultIcon }}
+        />
+      </Animated.View>
+    </Pressable>
   );
 };
 
