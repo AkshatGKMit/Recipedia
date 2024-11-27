@@ -1,6 +1,6 @@
 import { StyleProp, TextProps, TextStyle, TouchableHighlightProps, ViewStyle } from 'react-native';
 
-import { IconFamily } from '@constants';
+import { FoodTags, FoodTags, FoodTags, FoodTags, IconFamily, Images } from '@constants';
 
 declare global {
   type IconFamilyType = (typeof IconFamily)[keyof typeof IconFamily];
@@ -30,6 +30,9 @@ declare global {
     notSelect?: boolean;
   }
 
+  interface FoodClassificationProps {
+    name: FoodTags;
+  }
 
   interface RefOptions {
     onShow?: () => void;
