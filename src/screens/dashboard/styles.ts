@@ -27,6 +27,46 @@ const styles = StyleSheet.create({
     margin: 8,
     borderRadius: 10,
   },
+  jokeFloatingButtonContainer: {
+    position: 'absolute',
+    right: 0,
+    bottom: 100,
+    height: 50,
+    width: 50,
+    padding: 4,
+    borderRadius: 50,
+    backgroundColor: Colors.lightGreen,
+  },
+  jokeDialog: {
+    maxWidth: 500,
+    paddingHorizontal: 15,
+    paddingBottom: 15,
+    gap: 5,
+    borderRadius: 12,
+    backgroundColor: Colors.white,
+  },
+  jokeImage: {
+    width: 150,
+    height: 150,
+    aspectRatio: 1,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+  },
+  jokeHeadline: {
+    fontFamily: FontFamily.normal.black,
+    fontSize: FontSize.headlineLarge,
+    top: -10,
+  },
+  jokeText: {
+    fontFamily: FontFamily.normal.regular,
+    fontSize: FontSize.bodyLarge,
+  },
+  closeDialogIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    backgroundColor: Colors.greyShades.shade200,
+  },
 });
 
 export default styles;

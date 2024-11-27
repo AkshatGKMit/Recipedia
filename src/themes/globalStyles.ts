@@ -20,4 +20,8 @@ export const globalStyles = StyleSheet.create({
   flex1: {
     flex: 1,
   },
+  fullDimensions: {
+    width: '100%',
+    height: '100%',
+  },
 });

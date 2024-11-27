@@ -1,6 +1,14 @@
 import { StyleProp, TextProps, TextStyle, TouchableHighlightProps, ViewStyle } from 'react-native';
 
-import { FoodTags, FoodTags, FoodTags, FoodTags, IconFamily, Images } from '@constants';
+import {
+  FoodTags,
+  FoodTags,
+  FoodTags,
+  FoodTags,
+  IconFamily,
+  Images,
+  ShimmerDirection,
+} from '@constants';
 
 declare global {
   type IconFamilyType = (typeof IconFamily)[keyof typeof IconFamily];
@@ -47,5 +55,34 @@ declare global {
     isDismissible?: boolean;
     backdropColor?: string;
     borderRadius?: number;
+  }
+
+  interface Layout {
+    height: number;
+    width: number;
+    top?: number;
+    left?: number;
+    right?: number;
+    bottom?: number;
+  }
+
+  interface GradientPosition {
+    x: number;
+    y: number;
+  }
+
+  interface GradientStartEnd {
+    start: GradientPosition;
+    end: GradientPosition;
+  }
+
+  interface ShimmerProps {
+    baseColor: string;
+    highlightColor: string;
+    shimmerWidth?: number;
+    direction?: (typeof ShimmerDirection)[keyof typeof ShimmerDirection];
+    period?: number;
+    style?: StyleProp<ViewStyle>;
+    children?: ReactNode;
   }
 }

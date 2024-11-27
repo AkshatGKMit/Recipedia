@@ -55,4 +55,9 @@ export const FoodTags = {
   dinner: 'dinner',
 } as const;
 
+export const ShimmerDirection = {
+  ltr: 'ltr',
+  rtl: 'rtl',
+};
+
 export * from './images';
