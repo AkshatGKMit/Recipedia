@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useMemo } from 'react';
 import { View, Text, FlatList, ScrollView } from 'react-native';
 
 import FoodTagChip from '@components/foodTagChip';
@@ -83,8 +83,8 @@ const RecipeList = ({
   onLongPressTag,
   onPressTag,
 }: RecipeList) => {
-  const getSortedTags = useCallback(() => {
-    if (!includedTags && excludedTags) return undefined;
+  const tags = useMemo(() => {
+    if (!includedTags && !excludedTags) return undefined;
 
     const allTags = Object.keys(FoodTags) as FoodTags;
 
@@ -103,8 +103,6 @@ const RecipeList = ({
 
     return sortedTags;
   }, [includedTags, excludedTags]);
-
-  const tags = getSortedTags();
 
   return (
     <View style={styles.container}>
