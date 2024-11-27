@@ -19,6 +19,18 @@ declare global {
     onPress?: () => void;
   }
 
+  type FoodTag = (typeof FoodTags)[keyof typeof FoodTags];
+  type FoodTags = keyof typeof FoodTags;
+
+  interface FoodTagsProps {
+    name: FoodTags;
+    onPress?: (tag: FoodTag) => void;
+    onLongPress?: (tag: FoodTag) => void;
+    selected?: boolean;
+    notSelect?: boolean;
+  }
+
+
   interface RefOptions {
     onShow?: () => void;
     onHide?: () => void;

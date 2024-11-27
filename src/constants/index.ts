@@ -42,4 +42,17 @@ export const Routes = {
   },
 } as const;
 
+export const FoodTags = {
+  meat: 'meat',
+  vegan: 'vegan',
+  vegetarian: 'vegetarian',
+  dessert: 'dessert',
+  dairy: 'dairy',
+  gluten: 'gluten',
+  sustainable: 'sustainable',
+  lunch: 'lunch',
+  breakfast: 'breakfast',
+  dinner: 'dinner',
+} as const;
+
 export * from './images';
