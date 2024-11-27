@@ -8,7 +8,7 @@ import { globalStyles } from '@themes';
 
 import styles from './styles';
 
-const jokeDialog = (joke: string) => {
+const JokeDialog = (joke: string) => {
   return (
     <View style={[globalStyles.columnCenter, styles.jokeDialog]}>
       <Image
@@ -27,7 +27,7 @@ const jokeDialog = (joke: string) => {
   );
 };
 
-const foodJoke = (joke: string) => {
+const FoodJoke = (joke: string) => {
   const pan = useRef(new Animated.ValueXY()).current;
 
   const panResponder = useRef(
@@ -53,7 +53,7 @@ const foodJoke = (joke: string) => {
       <Pressable
         onPress={() =>
           Dialog.show({
-            child: jokeDialog(joke),
+            child: JokeDialog(joke),
           })
         }
       >
@@ -66,4 +66,4 @@ const foodJoke = (joke: string) => {
   );
 };
 
-export default foodJoke;
+export default FoodJoke;
