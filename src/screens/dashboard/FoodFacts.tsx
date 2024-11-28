@@ -6,9 +6,11 @@ import { IconFamily } from '@constants';
 import { globalStyles } from '@themes';
 import { Animation } from '@utility/animation';
 
-import styles from './styles';
+import Styles from './styles';
 
-const foodFacts = (trivia: string) => {
+const FoodFacts = ({ text: trivia }: GetRandomFacts) => {
+  const styles = Styles();
+
   const [bottomPosition, setBottomPosition] = useState(0);
 
   const translateY = Animation.newValue(0);
@@ -18,7 +20,7 @@ const foodFacts = (trivia: string) => {
   };
 
   useEffect(() => {
-    if (trivia) animate(true);
+    animate(true);
   }, [trivia]);
 
   const getBottomPosition = (e: LayoutChangeEvent) => {
@@ -56,4 +58,4 @@ const foodFacts = (trivia: string) => {
   );
 };
 
-export default foodFacts;
+export default FoodFacts;
