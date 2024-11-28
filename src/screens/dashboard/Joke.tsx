@@ -3,12 +3,14 @@ import { View, Text, Image, PanResponder, Animated, Pressable } from 'react-nati
 
 import Dialog from '@components/dialog';
 import IconButton from '@components/iconButton';
-import { defaultLayout, IconFamily, Images } from '@constants';
+import { IconFamily, Images } from '@constants';
 import { globalStyles } from '@themes';
 
-import styles from './styles';
+import Styles from './styles';
 
 const JokeDialog = (joke: string) => {
+  const styles = Styles();
+
   return (
     <View style={[globalStyles.columnCenter, styles.jokeDialog]}>
       <Image
@@ -27,7 +29,9 @@ const JokeDialog = (joke: string) => {
   );
 };
 
-const FoodJoke = (joke: string) => {
+const FoodJoke = ({ text: joke }: GetRandomFacts) => {
+  const styles = Styles();
+
   const pan = useRef(new Animated.ValueXY()).current;
 
   const panResponder = useRef(
@@ -44,6 +48,8 @@ const FoodJoke = (joke: string) => {
     styles.jokeFloatingButtonContainer,
     { transform: [{ translateX: pan.x }, { translateY: pan.y }] },
   ];
+
+  if (!joke) return null;
 
   return (
     <Animated.View
