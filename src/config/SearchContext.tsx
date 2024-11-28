@@ -42,11 +42,9 @@ export const SearchContextProvider = ({ children }: ContextProviderProps) => {
   const [searchedOn, setSearchedOn] = useState('');
   const [suggestions, setSuggestions] = useState<AutoCompleteSearches>(defaultAutoCompletedQueries);
   const [showSuggestions, setShowSuggestions] = useState(defaultShowAutoComplete);
-
   const [cuisines, setCuisines] = useState<Cuisines>(defaultCuisines);
   const [ingredients, setIngredients] = useState<Ingredients>(defaultIngredients);
   const [diets, setDiets] = useState<Diets>(defaultDiets);
-
   const [loading, setLoading] = useState(false);
 
   const { autoCompleteSearch: autoCompleteEndpoint, complexSearch: complexSearchEndpoint } =
@@ -67,8 +65,11 @@ export const SearchContextProvider = ({ children }: ContextProviderProps) => {
   const debouncedSearch = useCallback(debounce(fetchAutoComplete, 600), []);
 
   const onBackRequest = () => {
-    if (data.length && showSuggestions) setShowSuggestions(false);
-    else goBack();
+    if (data.length && showSuggestions) {
+      setShowSuggestions(false);
+    } else {
+      goBack();
+    }
 
     return true;
   };
@@ -78,11 +79,15 @@ export const SearchContextProvider = ({ children }: ContextProviderProps) => {
       debouncedSearch(searchText);
     }
 
-    if (!searchText) setShowSuggestions(false);
+    if (!searchText) {
+      setShowSuggestions(false);
+    }
   }, [searchText, debouncedSearch]);
 
   useEffect(() => {
-    if (data.length) onSubmit(searchedOn, false);
+    if (data.length) {
+      onSubmit(searchedOn, false);
+    }
   }, [diets, cuisines, ingredients]);
 
   useEffect(() => {

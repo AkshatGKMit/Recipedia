@@ -3,7 +3,7 @@ import { Animated, Pressable, Text, View } from 'react-native';
 
 import Icon from '@components/icon';
 import SearchContext from '@config/SearchContext';
-import { Cuisines, Ingredients, Diets, IconFamily } from '@constants';
+import { Cuisines, Ingredients, Diets, IconFamily, SearchFilters } from '@constants';
 import { Colors } from '@themes';
 import { Animation } from '@utility/animation';
 
@@ -94,9 +94,14 @@ const Filters = (inputContainerHeight: number) => {
       onLayout={(e) => setContainerHeight(e.nativeEvent.layout.height)}
       style={containerStyle}
     >
-      {FilterTags<Cuisine>('Cuisine', Cuisines, selectedCuisines, handleCuisine)}
-      {FilterTags<Ingredient>('Ingredients', Ingredients, selectedIngredients, handleIngredient)}
-      {FilterTags<Diet>('Diets', Diets, selectedDiets, handleDiet)}
+      {FilterTags<Cuisine>(SearchFilters.cuisine, Cuisines, selectedCuisines, handleCuisine)}
+      {FilterTags<Ingredient>(
+        SearchFilters.ingredients,
+        Ingredients,
+        selectedIngredients,
+        handleIngredient,
+      )}
+      {FilterTags<Diet>(SearchFilters.diets, Diets, selectedDiets, handleDiet)}
       <Pressable
         onLayout={(e) => setFilterButtonHeight(e.nativeEvent.layout.height)}
         onPress={() => {
