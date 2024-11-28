@@ -60,4 +60,10 @@ export const ShimmerDirection = {
   rtl: 'rtl',
 };
 
+export const SearchFilters = {
+  cuisine: 'Cuisine',
+  ingredients: 'Ingredients',
+  diets: 'Diets',
+} as const;
+
 export * from './images';
