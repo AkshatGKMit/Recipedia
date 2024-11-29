@@ -7,10 +7,10 @@ import ApiConstants from '@network/apiConstants';
 import { _get } from '@network/instanceMethods';
 
 const defaultValue: DetailsContextValues = {
-  recipe: recipeEg,
-  taste: taste,
-  equipments: equipments,
-  similarRecipes: [recipe, recipe, recipe, recipe, recipe, recipe, recipe, recipe, recipe],
+  recipe: null,
+  taste: null,
+  equipments: null,
+  similarRecipes: null,
 };
 
 const DetailsContext = createContext<DetailsContextValues>(defaultValue);
@@ -39,8 +39,6 @@ export const DetailsContextProvider = ({ children }: ContextProviderProps) => {
 
   const fetchRecipeInformation = async (id: number) => {
     const infoResponse = await _get<Recipe>(infoEndpoint(id));
-
-    console.log(infoEndpoint(id));
 
     if (!infoResponse.success) {
       const { code, message } = infoResponse.error;
